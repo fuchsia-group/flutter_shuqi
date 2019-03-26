@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shuqi/views/first_page/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -97,6 +98,15 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            FlatButton(
+              child: Text("Open new route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return HemoPage();
+                }));
+              },
             ),
           ],
         ),
