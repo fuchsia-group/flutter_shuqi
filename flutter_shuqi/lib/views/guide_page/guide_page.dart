@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_shuqi/common/sq_color.dart';
 import 'package:flutter_shuqi/common/screen.dart';
 import 'package:flutter_shuqi/views/first_page/home.dart';
@@ -251,7 +252,7 @@ class _GuidePageState extends State<GuidePage> {
               Text("《隐私权政策》",
                   style: TextStyle(fontSize: 12, color: Colors.green)),
             ],
-          )
+          ),
         ],
       ),
     );
