@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_shuqi/common/sq_color.dart';
 import 'package:flutter_shuqi/widgets/404.dart';
 
 class HemoPage extends StatefulWidget {
