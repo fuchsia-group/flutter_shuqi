@@ -182,7 +182,7 @@ class _GuideRecommendedPageState extends State<GuideRecommendedPage> {
                   SizedBox(width: 10),
                   Expanded(
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                      // mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -224,7 +224,7 @@ class _GuideRecommendedPageState extends State<GuideRecommendedPage> {
               height: 1,
             ),
             Container(
-                height: 60,
+                height: 50,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
