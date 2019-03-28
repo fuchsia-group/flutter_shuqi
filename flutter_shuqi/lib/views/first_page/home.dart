@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_shuqi/widgets/404.dart';
+import 'package:flutter_shuqi/views/forth_page/mine_page/mine.dart';
+
 
 class HemoPage extends StatefulWidget {
   @override
@@ -13,8 +15,8 @@ class HemoPageState extends State<HemoPage> {
   static List tabs = [
     {"text": Text("书架"), "icon": Icon(Icons.book)},
     {"text": Text("书城"), "icon": Icon(Icons.bookmark)},
-    {"text": Text("免费"), "icon": Icon(Icons.free_breakfast)},
-    {"text": Text("独家"), "icon": Icon(Icons.signal_cellular_4_bar)},
+    {"text": Text("独家"), "icon": Icon(Icons.free_breakfast)},
+    {"text": Text("我的"), "icon": Icon(Icons.signal_cellular_4_bar)},
   ];
 
   List<BottomNavigationBarItem> myTabs = [];
@@ -45,7 +47,7 @@ class HemoPageState extends State<HemoPage> {
           WidgetNotFound(),
           WidgetNotFound(),
           WidgetNotFound(),
-          WidgetNotFound()
+          MinePage()
         ],
         index: _selectedIndex,
       ),
