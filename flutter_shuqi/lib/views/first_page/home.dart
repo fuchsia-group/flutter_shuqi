@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_shuqi/widgets/404.dart';
 import 'package:flutter_shuqi/views/forth_page/mine_page/mine.dart';
 
+import 'package:flutter_shuqi/views/third_page/alone_home/alone_home.dart';
 
 class HemoPage extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class HemoPageState extends State<HemoPage> {
         children: <Widget>[
           WidgetNotFound(),
           WidgetNotFound(),
-          WidgetNotFound(),
+          AloneHome(),
           MinePage()
         ],
         index: _selectedIndex,
