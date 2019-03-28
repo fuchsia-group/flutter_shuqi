@@ -46,6 +46,7 @@ flutter:
   - images/placeholder_avatar.png
   - images/me_wallet.png
   - images/arrow_right.png
+  - images/bookshelf_bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

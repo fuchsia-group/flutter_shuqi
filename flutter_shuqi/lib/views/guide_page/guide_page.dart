@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_shuqi/common/sq_color.dart';
 import 'package:flutter_shuqi/common/screen.dart';
 import 'package:flutter_shuqi/views/first_page/home.dart';
+import 'package:flutter_shuqi/views/guide_page/guide_ recommended.dart';
 
 class GuidePage extends StatefulWidget {
   GuidePage({Key key}) : super(key: key);
@@ -209,7 +210,7 @@ class _GuidePageState extends State<GuidePage> {
             onTap: () {
               if (isEnable) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HemoPage();
+                  return GuideRecommendedPage();
                 }));
               }
             },
@@ -230,6 +231,7 @@ class _GuidePageState extends State<GuidePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               IconButton(
+                tooltip: "ddd",
                 icon: Icon(
                   Icons.check_circle,
                   color: isEnable ? Colors.green : Colors.grey[300],
