@@ -29,9 +29,16 @@ class _BookshelfPageState extends State<BookshelfPage> {
             ),
             pinned: true,
           ),
+          // SliverGrid.count(
+          //   crossAxisCount: 3,
+          //   crossAxisSpacing: 10.0,
+          //   mainAxisSpacing:10.0,
+          //   childAspectRatio: 3/5,
+          //   children: _buildItems(context,books),
+          // )
           SliverGrid(
             gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,childAspectRatio: 7/10),
             delegate: SliverChildBuilderDelegate((builder, index) {
               return _buildItem(context, books[index]);
             }, childCount: books.length),
@@ -41,42 +48,48 @@ class _BookshelfPageState extends State<BookshelfPage> {
     );
   }
 
-  Widget _buildItem(context, BookItem book) {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        children: <Widget>[Image.asset(book.asset, width: 90, height: 130)],
-      ),
-    );
+  List<Widget> _buildItems(BuildContext context,List<BookItem> books){
+    return books.map((book){
+      return _buildItem(context, book);
+    }).toList();
   }
-
   // Widget _buildItem(context, BookItem book) {
-  //   var width = (Screen.width - 15 * 2 - 24 * 2) / 3;
-  //   return GestureDetector(
-  //     onTap: () {},
-  //     child: Container(
-  //       child: Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: <Widget>[
-  //           DecoratedBox(
-  //             child: Image.asset(
-  //               book.asset,
-  //               width: width,
-  //               height: width / 0.75,
-  //             ),
-  //             decoration: BoxDecoration(boxShadow: [
-  //               BoxShadow(color: Color(0x22000000), blurRadius: 5)
-  //             ]),
-  //           ),
-  //           SizedBox(height: 10),
-  //           Text(book.bookName,
-  //               style: TextStyle(fontSize: 14),
-  //               maxLines: 1,
-  //               overflow: TextOverflow.ellipsis),
-  //           SizedBox(height: 25),
-  //         ],
-  //       ),
+  //   return Container(
+  //     alignment: Alignment.center,
+  //     child: Column(
+  //       children: <Widget>[Image.asset(book.asset, width: 90, height: 130)],
   //     ),
   //   );
   // }
+
+  Widget _buildItem(context, BookItem book) {
+    var width = (Screen.width - 15 * 2 - 24 * 2) / 3;
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        color:Colors.red[400],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            DecoratedBox(
+              child: Image.asset(
+                book.asset,
+                width: width,
+                height: width / 0.75,
+              ),
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(color: Color(0x22000000), blurRadius: 5)
+              ]),
+            ),
+            SizedBox(height: 10),
+            Text(book.bookName,
+                style: TextStyle(fontSize: 14),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis),
+            SizedBox(height: 25),
+          ],
+        ),
+      ),
+    );
+  }
 }

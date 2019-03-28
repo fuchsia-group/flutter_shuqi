@@ -34,6 +34,7 @@ class _AloneHomeState extends State<AloneHome> {
       appBar: AppBar(
         leading: Text(""),
         backgroundColor: SQColor.white,
+        elevation:0.0,
         actions: <Widget>[
         InkWell(
                 onTap: null,
