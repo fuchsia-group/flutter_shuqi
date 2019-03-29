@@ -39,11 +39,9 @@ class _AloneHomeBannerState extends State<AloneHomeBanner> {
       items: _getBannerWidget(),
       onPageChanged: (int i){
         setState(() {
-          
           currentPage = i;
         });
       },
-      
       autoPlay: true,
     ),
       PageControl(

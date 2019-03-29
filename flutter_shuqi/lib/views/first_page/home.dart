@@ -4,7 +4,7 @@ import 'package:flutter_shuqi/widgets/404.dart';
 import 'package:flutter_shuqi/views/forth_page/mine_page/mine.dart';
 import 'package:flutter_shuqi/views/forth_page/bookshelf/bookshelf_page.dart';
 import 'package:flutter_shuqi/views/forth_page/bookshelf/sliver_box.dart';
-
+import 'package:flutter_shuqi/views/second_page/book_city.dart';
 import 'package:flutter_shuqi/views/third_page/alone_home/alone_home.dart';
 
 class HemoPage extends StatefulWidget {
@@ -48,7 +48,7 @@ class HemoPageState extends State<HemoPage> {
       body: IndexedStack(
         children: <Widget>[
           BookshelfPage(),
-          WidgetNotFound(),
+          BookCity(),
           AloneHome(),
           MinePage()
         ],
