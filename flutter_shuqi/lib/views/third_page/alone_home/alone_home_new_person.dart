@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shuqi/common/sq_color.dart';
 import 'package:flutter_shuqi/common/screen.dart';
+import 'package:flutter_shuqi/views/common/page_control.dart';
 
 
 
@@ -12,6 +13,26 @@ class AloneHomeNewPerson extends StatefulWidget {
 }
 
 class _AloneHomeNewPersonState extends State<AloneHomeNewPerson> {
+
+PageController pgcl ;
+int currentPage=0;
+@override
+void initState(){
+  super.initState();
+  pgcl =PageController();
+  pgcl.addListener((){
+      double offset =pgcl.offset;
+  
+    List pageIndex = [0,1,2,3];
+    for (int index in pageIndex) {
+      if (offset ==Screen.width*index) {
+           setState(() {
+          currentPage = index;
+        });
+      }
+    }
+  });
+}
 
 Widget _drawTitle(){
   return Container(
@@ -109,6 +130,7 @@ Widget _drawContent(){
     width: Screen.width,
     height: 190,
      child: PageView.builder(
+       controller: pgcl,
       itemBuilder: (BuildContext context,int index){
         return _drawContentPage(index);
       },
@@ -128,9 +150,13 @@ Widget _drawContent(){
     return Container(
       width: Screen.width,
       height: 30,
-      // ,
+      child: PageControl(
+        currentPage: currentPage,
+        pageCount: 4,
+      ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
